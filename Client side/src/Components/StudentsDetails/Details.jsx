@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Details = () => {
+    
   const [students, setStudents] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/studentList")

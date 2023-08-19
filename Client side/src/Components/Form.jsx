@@ -1,6 +1,11 @@
 import React from "react";
 
 const Form = (props) => {
+  const fetchList = () => {
+    fetch("http://localhost:3000/studentList")
+      .then((res) => res.json())
+      .then((data) => props.setStudents(data));
+  };
   const createStudentHandler = () => {
     if (props.studentName) {
       const newStudent = {
@@ -15,8 +20,8 @@ const Form = (props) => {
         },
       })
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
+        .then(() => {
+          fetchList();
         });
       // props.setStudents([...props.students, newStudent]);
       props.setStudentName("");
