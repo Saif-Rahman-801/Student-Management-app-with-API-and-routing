@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import StudentSection from "./Components/StudentSection";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [studentName, setStudentName] = useState("");
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="App container">
+      <Outlet/>
       <Form
         editMode={editMode}
         setEditMode={setEditMode}

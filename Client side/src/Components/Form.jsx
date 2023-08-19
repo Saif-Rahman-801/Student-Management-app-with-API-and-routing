@@ -7,7 +7,8 @@ const Form = (props) => {
         id: Date.now(),
         name: props.studentName,
       };
-      props.setStudents([...props.students, newStudent]);
+
+      // props.setStudents([...props.students, newStudent]);
       props.setStudentName("");
     } else {
       alert("Enter a valid Name");
