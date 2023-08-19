@@ -7,7 +7,17 @@ const Form = (props) => {
         id: Date.now(),
         name: props.studentName,
       };
-
+      fetch("http://localhost:3000/studentList", {
+        method: "POST",
+        body: JSON.stringify(newStudent),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
       // props.setStudents([...props.students, newStudent]);
       props.setStudentName("");
     } else {
